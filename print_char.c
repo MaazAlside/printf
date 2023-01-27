@@ -9,6 +9,7 @@
   * Description: _putchar uses a local buffer of 1024 to call write
   * as little as possible
   */
+
 int _putchar(char c)
 {
 	static char buf[1024];
@@ -23,7 +24,6 @@ int _putchar(char c)
 	{
 		buf[i] = c;
 		i++;
-
 	}
 	return (1);
 }
@@ -36,9 +36,24 @@ int _putchar(char c)
 
 int _puts(char *str)
 {
-	register int i;
+	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 	return (i);
+}
+
+/**
+  * print_char - prints a character
+  * @l: va_list arguments from _printf
+  * @f: pointer to the struct flags that determines
+  * if a flag is passed to _printf
+  * Return: number of char printed
+  */
+
+int print_char(va_list l, flags_t *f)
+{
+	(void)f;
+	_putchar(va_arg(l, int));
+	return (1);
 }

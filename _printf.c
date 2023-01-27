@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 
 		return (-1);
-	
+
 	for (p = format; *p; p++)
 	{
 		if (*p == '%')
